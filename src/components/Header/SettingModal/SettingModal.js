@@ -42,7 +42,7 @@ export const SettingModal = () => {
   const [emailNotCorrect, setemailNotCorrect] = useState(false);
   const [newPasswordIsOld, setNewPasswordIsOld] = useState(false);
   const [passwordMismatch, setaPasswordMismatch] = useState(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   const a = [emailNotCorrect, newPasswordIsOld, passwordMismatch]
 
   const dispatch = useDispatch();
@@ -384,6 +384,7 @@ export const SettingModal = () => {
             <SubmitBtn type="submit">Save</SubmitBtn>
           </StyledForm>
         )}
+        <p style={{display: "none"}}>{a}</p>
       </Formik>
     </>
   );

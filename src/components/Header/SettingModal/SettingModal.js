@@ -35,13 +35,16 @@ import {
 import { Formik } from 'formik';
 import toast from 'react-hot-toast';
 
-export const SettingModal = ({ isOpen, onRequestClose }) => {
+export const SettingModal = () => {
   const { avatarURL } = useSelector(selectUser);
-  const [selectedFile, setSelectedFile] = useState(null);
+  //const [selectedFile, setSelectedFile] = useState(null);
 
   // console.log(avatarURL);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const [emailNotCorrect, setemailNotCorrect] = useState(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const [newPasswordIsOld, setNewPasswordIsOld] = useState(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const [passwordMismatch, setaPasswordMismatch] = useState(false);
 
   const dispatch = useDispatch();
@@ -52,14 +55,10 @@ export const SettingModal = ({ isOpen, onRequestClose }) => {
     confirmPassword: false,
   });
 
-  // const handleUploadPhoto = () => {
-  //   console.log('File to upload:', selectedFile);
-  // };
 
   const handleFileChange = async event => {
     const file = event.target.files[0];
     await dispatch(updateAvatarThunk({ avatarURL: file }));
-    // setSelectedFile(file);
   };
 
   const { email, gender, name } = useSelector(selectUser);

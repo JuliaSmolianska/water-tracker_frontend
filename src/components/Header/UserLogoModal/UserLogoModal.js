@@ -22,7 +22,7 @@ export const UserLogoModal = ({setIsOpen}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   const userLogoModalLogout = async () => {
     await dispatch(logoutThunk());
     navigate('/signin');

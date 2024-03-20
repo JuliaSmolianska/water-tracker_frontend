@@ -79,6 +79,7 @@ export const TodayListModal = ({ modalIsOpen, closeModal }) => {
     if (waterVolume < 0 || waterVolume > 1500) {
       return toast.error('You can enter value from 0 to 1500');
     } else if (waterVolume > 0) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       const data = await dispatch(
         addWaterThunk({ waterVolume, time, date, month, percent })
       );
@@ -98,8 +99,8 @@ export const TodayListModal = ({ modalIsOpen, closeModal }) => {
     const disabledMinutes = selectedHour => {
       return selectedHour === currentHour
         ? Array.from({ length: 60 }, (_, index) =>
-            index > now.minute() ? index : -1
-          ).filter(minute => minute !== -1)
+          index > now.minute() ? index : -1
+        ).filter(minute => minute !== -1)
         : [];
     };
 

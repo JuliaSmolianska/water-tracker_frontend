@@ -31,8 +31,8 @@ export const EditModal = ({ onRequestClose, params }) => {
   const [startDate, setStartDate] = useState(new Date());
   // const dispatch = useDispatch();
 
-  const hours = startDate.getHours().toString().padStart(2, '0');
-  const minutes = startDate.getMinutes().toString().padStart(2, '0');
+  //const hours = startDate.getHours().toString().padStart(2, '0');
+  //const minutes = startDate.getMinutes().toString().padStart(2, '0');
   const increment = () => {
     // console.log(setWaterVolume(state => state + 50));
     setWaterVolume(state => state + 50);

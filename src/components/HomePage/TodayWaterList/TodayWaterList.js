@@ -10,7 +10,6 @@ import { ButtonAddWater, List, TodayHead } from './TodayWaterList.styled';
 import { TodayListModal } from '../TodayListModal/TodayListModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTodayWaterThunk } from 'redux/consumedwaters/consumedwatersOperations';
-import { selectUser } from 'redux/auth/authSelectors';
 import { selectWaterToday } from 'redux/consumedwaters/consumedwatersSelectors';
 
 export const TodayWaterList = () => {

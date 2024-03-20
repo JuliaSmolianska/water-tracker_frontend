@@ -36,16 +36,14 @@ import { Formik } from 'formik';
 import toast from 'react-hot-toast';
 
 export const SettingModal = () => {
-  const { avatarURL } = useSelector(selectUser);
+  const { avatarURL, email, gender, name } = useSelector(selectUser);
   //const [selectedFile, setSelectedFile] = useState(null);
 
-  // console.log(avatarURL);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const [emailNotCorrect, setemailNotCorrect] = useState(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const [newPasswordIsOld, setNewPasswordIsOld] = useState(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const [passwordMismatch, setaPasswordMismatch] = useState(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const a = [emailNotCorrect, newPasswordIsOld, passwordMismatch]
 
   const dispatch = useDispatch();
 
@@ -61,7 +59,6 @@ export const SettingModal = () => {
     await dispatch(updateAvatarThunk({ avatarURL: file }));
   };
 
-  const { email, gender, name } = useSelector(selectUser);
   const initialValues = {
     name: name,
     email: '',
@@ -224,7 +221,7 @@ export const SettingModal = () => {
               <AvatarBtn
                 type="button"
                 htmlFor="uploadInput"
-                // onClick={handleUploadPhoto}
+              // onClick={handleUploadPhoto}
               >
                 <svg width="16" height="16" stroke="#407BFF" fill="none">
                   <use xlinkHref={`${sprite}#icon-arrow-up-tray`} />

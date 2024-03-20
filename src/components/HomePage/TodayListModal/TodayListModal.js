@@ -84,7 +84,7 @@ export const TodayListModal = ({ modalIsOpen, closeModal }) => {
         addWaterThunk({ waterVolume, time, date, month, percent })
       );
       handleCloseModal();
-      return toast.success(`${waterVolume} water added`);
+      return (data, toast.success(`${waterVolume} water added`));
     }
   };
 

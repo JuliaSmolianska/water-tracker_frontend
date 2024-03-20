@@ -9,25 +9,26 @@ import {
 } from './UserLogoModal.styled';
 import { SettingModal } from '../SettingModal/SettingModal';
 import { ModalWindow } from 'components/ModalWindow/ModalWindow.js';
-
-import SpriteIcons from '../../../images/sprite.svg';
-import { logoutThunk } from 'redux/auth/authOperations';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { LogoutModal } from '../LogoutModal/LogoutModal';
+import SpriteIcons from '../../../images/sprite.svg';
+//import { logoutThunk } from 'redux/auth/authOperations';
+//import { useDispatch } from 'react-redux';
+//import { useNavigate } from 'react-router-dom';
+
 
 export const UserLogoModal = ({setIsOpen}) => {
   const [isSettingOpen, setIsSettingOpen] = useState(false);
   const [isLogoutOpen, setIsLogoutOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(true);
+  /*
   const dispatch = useDispatch();
   const navigate = useNavigate();
-// eslint-disable-next-line react-hooks/exhaustive-deps
+
   const userLogoModalLogout = async () => {
     await dispatch(logoutThunk());
     navigate('/signin');
   };
-
+*/
   const handleOpenModal = (modal) => {
     setIsDropdownOpen(false);
     modal === 'setting' ? setIsSettingOpen(true) : setIsLogoutOpen(true);

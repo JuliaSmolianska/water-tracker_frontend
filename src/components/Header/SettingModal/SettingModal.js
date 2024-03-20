@@ -375,8 +375,6 @@ export const SettingModal = () => {
                       name="confirmPassword"
                     />
                   </InputWrapper>
-                  {/* {passwordMismatch === true &&
-                    toast.error('!!!Password mismatch!!!')} */}
                 </FieldWrapper>
               </PasswordBox>
             </FlexBox>
